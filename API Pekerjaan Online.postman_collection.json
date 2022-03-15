@@ -1,0 +1,234 @@
+{
+	"info": {
+		"_postman_id": "528eaa49-f1ba-4307-8f83-22c124b57c58",
+		"name": "API Pekerjaan Online",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Perusahaan",
+			"item": [
+				{
+					"name": "Menambah Perusahaan Baru",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "nama_perusahaan",
+									"value": "PT. Telkomsel Indonesia",
+									"type": "text"
+								},
+								{
+									"key": "logo",
+									"value": "https://upload.wikimedia.org/wikipedia/id/thumb/c/c4/Telkom_Indonesia_2013.svg/1200px-Telkom_Indonesia_2013.svg.png",
+									"type": "text"
+								},
+								{
+									"key": "alamat",
+									"value": "Jl. Siliwangi, no. 24 Tasikmalaya",
+									"type": "text"
+								},
+								{
+									"key": "deskripsi",
+									"value": "Perusahaan Telekomunikasi Terbesar di Indonesia",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{server}}/perusahaan",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"perusahaan"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Menghapus Data Perusahaan",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/perusahaan/2",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"perusahaan",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Menampilkan List Perusahaan",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/perusahaan",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"perusahaan"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Mengubah Data Perusahaan",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "deskripsi",
+									"value": "Perusahaan telekomunikasi terbesar di Indonesia",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{server}}/perusahaan/2",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"perusahaan",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "2|LukbzvAZsYZ70HTIBJg3Idos8G0OFg6gnikNeEIn",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Authentikasi",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "gunawan@dede.web.id",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{server}}/login",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Dede Gunawan",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "gunawan@dede.web.id",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "text"
+								},
+								{
+									"key": "password_confirmation",
+									"value": "password",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{server}}/register",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
